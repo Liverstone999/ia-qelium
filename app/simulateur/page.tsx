@@ -146,7 +146,7 @@ export default function Simulateur() {
               animate={{ opacity: 1 }}
               className="bg-green-50 text-green-700 rounded-lg p-4 font-medium"
             >
-              ✅ Merci {nom || ""}! Votre estimation a bien été envoyée.
+              ✅ Merci {nom || ""} ! Votre estimation a bien été envoyée.
             </motion.div>
           )}
         </div>
