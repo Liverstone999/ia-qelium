@@ -116,7 +116,7 @@ export default function Simulateur() {
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-4">
               <h3 className="text-lg font-semibold text-gray-700">
-                Envoyer votre estimation par email 📩
+                Envoi des résultats par mail  📩
               </h3>
               <input
                 type="text"
@@ -127,7 +127,7 @@ export default function Simulateur() {
               />
               <input
                 type="email"
-                placeholder="Votre adresse email"
+                placeholder="Votre adresse mail"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -137,7 +137,7 @@ export default function Simulateur() {
                 type="submit"
                 className="w-full bg-[#176be0] text-white py-3 rounded-lg shadow hover:bg-blue-600 transition"
               >
-                Recevoir mon résultat
+                Envoyer
               </button>
             </form>
           ) : (
