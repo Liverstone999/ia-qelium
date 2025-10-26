@@ -80,11 +80,11 @@ export default function Simulateur() {
             Résultats (estimation)<br></br><br></br>
           </h2>
           <p className="text-gray-700">
-            <strong>Coût de la tâche (avant solution IA)  :</strong> {coutActuel.toFixed(0)} €<br />
-            <strong>Coût de la tâche (après solution IA) :</strong> {coutApresAuto.toFixed(0)} €<br />
+            <strong>Coût de la tâche (avant solution IA)  :</strong> {coutActuel.toLocaleString('fr-FR', { maximumFractionDigits: 0 })} €<br />
+            <strong>Coût de la tâche (après solution IA) :</strong> {coutApresAuto.toLocaleString('fr-FR', { maximumFractionDigits: 0 })} €<br />
             <strong>Gain :</strong>{" "}
             <span className="text-green-600 font-bold">
-              {economie.toFixed(0)} €
+              {economie.toLocaleString('fr-FR', { maximumFractionDigits: 0 })} €
             </span><br />
             <strong>ROI :</strong> {roi.toFixed(0)} %<br></br>
             <br/>
@@ -97,7 +97,7 @@ export default function Simulateur() {
             🔹 Libérer <strong>{etpEco}</strong> employé(es) à temps plein pour des tâches à plus forte valeur.<br></br><br></br>
             🔹 Augmenter la rapidité, la fiabilité et la qualité de vos processus.<br></br><br></br>
             🔹 Réduire de <strong>95</strong> % les erreurs manuelles<br></br><br></br>
-            🔹 Rembourser totalement votre investissement en <strong>{delaiROI}</strong> mois par les économies réalisées. Ensuite, tout ce qui est gagné sur l’année (<strong>{ecoAn}</strong> €) devient du bénéfice net.
+            🔹 Rembourser totalement votre investissement en <strong>{delaiROI}</strong> mois par les économies réalisées. Ensuite, tout ce qui est gagné sur l’année (<strong>{ecoAn.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}</strong> €) devient du bénéfice net.
           </p>
           <br></br>
           {/* Graphique — container en px pour garantir visibilité */}
