@@ -29,7 +29,21 @@ export default function Simulateur() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    // fetch webhook...
+
+    // Webhook n8n
+    fetch("https://n8n.qelium.fr/webhook-test/15c4497a-6d5d-418a-a13e-5952a5cdd2f3", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      nom,
+      email,
+      heures,
+      coutAnnuel,
+      economie,
+      roi,
+    }),
+  });
+
   };
 
   // Graph params
