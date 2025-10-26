@@ -17,7 +17,6 @@ export default function Simulateur() {
   const etp = heuresAn / 1607;
   const etpEco = Math.round((heuresEcoAn / 1607) * 10) / 10;
   const coutActuel = etp * coutAnnuel;
-  const coutActuelFormatted = (etp * coutAnnuel).toLocaleString("fr-FR")
   const coutApresAuto = coutActuel * (1 - tauxAuto / 100);
   const economie = coutActuel - coutApresAuto;
   const coutIA = 7 * heuresAn;
