@@ -98,7 +98,7 @@ export default function Simulateur() {
             🔹 Libérer <strong>{etpEco}</strong> employé(es) à temps plein pour des tâches à plus forte valeur.<br></br><br></br>
             🔹 Augmenter la rapidité, la fiabilité et la qualité de vos processus.<br></br><br></br>
             🔹 Réduire de <strong>95</strong> % les erreurs manuelles<br></br><br></br>
-            🔹 Rembourser totalement votre investissement en <strong>{delaiROI}</strong> mois par les économies réalisées. Ensuite, tout ce qui est gagné sur l’année <strong>{ecoAn}</strong> € devient du bénéfice net.
+            🔹 Rembourser totalement votre investissement en <strong>{delaiROI}</strong> mois par les économies réalisées. Ensuite, tout ce qui est gagné sur l’année (<strong>{ecoAn}</strong> €) devient du bénéfice net.
           </p>
           <br></br>
           {/* Graphique — container en px pour garantir visibilité */}
