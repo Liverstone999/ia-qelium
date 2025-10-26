@@ -68,7 +68,7 @@ export default function Simulateur() {
     };
 
     // Webhook n8n
-    fetch("https://n8n.qelium.fr/webhook/15c4497a-6d5d-418a-a13e-5952a5cdd2f3", {
+    fetch("https://n8n.qelium.fr/webhook-test/15c4497a-6d5d-418a-a13e-5952a5cdd2f3", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
@@ -92,7 +92,7 @@ export default function Simulateur() {
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4 py-12">
       <div className="max-w-2xl w-full bg-white shadow-xl rounded-2xl p-8">
         <h1 className="text-3xl font-bold text-center text-[#176be0] mb-6">
-          <br></br>Simulateur de projet IA
+          Simulateur de projet IA
         </h1>
 
         {/* Formulaire principal */}
