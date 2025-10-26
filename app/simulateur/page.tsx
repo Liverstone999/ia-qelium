@@ -30,20 +30,51 @@ export default function Simulateur() {
     e.preventDefault();
     setSubmitted(true);
 
-    // Webhook n8n
-    fetch("https://n8n.qelium.fr/webhook-test/15c4497a-6d5d-418a-a13e-5952a5cdd2f3", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
+    // 1) Prépare les formats lisibles (pour affichage)
+    const roiStr = `${roi}`; // si roi est déjà un string ou number
+    const rentabStr = `${rentab}`;
+    const tauxAutoStr = `${tauxAuto}`;
+    const heuresEcoAnStr = `${heuresEcoAn}`;
+    const etpEcoStr = `${etpEco}`;
+    const delaiROIStr = `${delaiROI}`;
+    const ecoAnFormatted = Number(ecoAn).toLocaleString('fr-FR', { maximumFractionDigits: 0 });
+
+    // 2) Construis la chaîne HTML à envoyer dans detail_simu
+    const detailSimu = `
+    Votre solution IA d'automatisation de vos flux vous permettrait de :<br></br><br></br>
+    🔹 Générer un ROI de <strong>+${roiStr}</strong> % dès la 1ère année. Chaque euro investi rapporterait <strong>${rentabStr}</strong> € de bénéfice net.<br></br><br></br>
+    🔹 Réduire de <strong>${tauxAutoStr}</strong> % le temps passé sur votre tâche, soit près de <strong>${heuresEcoAnStr}</strong> heures économisées par an.<br></br><br></br>
+    🔹 Libérer <strong>${etpEcoStr}</strong> employé(es) à temps plein pour des tâches à plus forte valeur.<br></br><br></br>
+    🔹 Augmenter la rapidité, la fiabilité et la qualité de vos processus.<br></br><br></br>
+    🔹 Réduire de <strong>95</strong> % les erreurs manuelles<br></br><br></br>
+    🔹 Rembourser totalement votre investissement en <strong>${delaiROIStr}</strong> mois par les économies réalisées. Ensuite, tout ce qui est gagné sur l’année (<strong>${ecoAnFormatted}</strong> €) devient du bénéfice net.
+    `;
+
+    // 3) Prépare le corps JSON — ici j'envoie à la fois des valeurs brutes pour calculs
+    // et la version formatée HTML dans detail_simu
+    const payload = {
       nom,
       email,
       heures,
       coutAnnuel,
+      tauxAuto,
       economie,
       roi,
-    }),
-  });
+      // champs numériques bruts (pour traitement côté n8n)
+      ecoAnRaw: Math.round(Number(ecoAn)),
+      coutActuelRaw: Math.round(Number(coutActuel || 0)),
+      // champ HTML avec le détail formaté
+      detail_simu: detailSimu
+    };
 
+    // Webhook n8n
+    fetch("https://n8n.qelium.fr/webhook-test/15c4497a-6d5d-418a-a13e-5952a5cdd2f3", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  })
+  .then(r => r.ok ? console.log('envoyé') : console.error('erreur', r.statusText))
+  .catch(err => console.error('fetch error', err));
   };
 
   // Graph params
