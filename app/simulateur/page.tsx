@@ -41,12 +41,12 @@ export default function Simulateur() {
 
     // 2) Construis la chaîne HTML à envoyer dans detail_simu
     const detailSimu = `
-    Votre solution IA d'automatisation de vos flux vous permettrait de :<br></br><br></br>
-    🔹 Générer un ROI de <strong>+${roiStr}</strong> % dès la 1ère année. Chaque euro investi rapporterait <strong>${rentabStr}</strong> € de bénéfice net.<br></br><br></br>
-    🔹 Réduire de <strong>${tauxAutoStr}</strong> % le temps passé sur votre tâche, soit près de <strong>${heuresEcoAnStr}</strong> heures économisées par an.<br></br><br></br>
-    🔹 Libérer <strong>${etpEcoStr}</strong> employé(es) à temps plein pour des tâches à plus forte valeur.<br></br><br></br>
-    🔹 Augmenter la rapidité, la fiabilité et la qualité de vos processus.<br></br><br></br>
-    🔹 Réduire de <strong>95</strong> % les erreurs manuelles<br></br><br></br>
+    <br/>Votre solution IA d'automatisation de vos flux vous permettrait de :<br/>
+    🔹 Générer un ROI de <strong>+${roiStr}</strong> % dès la 1ère année. Chaque euro investi rapporterait <strong>${rentabStr}</strong> € de bénéfice net.<br/>
+    🔹 Réduire de <strong>${tauxAutoStr}</strong> % le temps passé sur votre tâche, soit près de <strong>${heuresEcoAnStr}</strong> heures économisées par an.<br/>
+    🔹 Libérer <strong>${etpEcoStr}</strong> employé(es) à temps plein pour des tâches à plus forte valeur.<br/>
+    🔹 Augmenter la rapidité, la fiabilité et la qualité de vos processus.<br/>
+    🔹 Réduire de <strong>95</strong> % les erreurs manuelles<br/>
     🔹 Rembourser totalement votre investissement en <strong>${delaiROIStr}</strong> mois par les économies réalisées. Ensuite, tout ce qui est gagné sur l’année (<strong>${ecoAnFormatted}</strong> €) devient du bénéfice net.
     `;
 
