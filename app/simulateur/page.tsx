@@ -125,9 +125,9 @@ export default function Simulateur() {
             Résultats (estimation)<br></br><br></br>
           </h2>
           <p className="text-gray-700">
-            <strong>Coût de la tâche (avant solution IA)  :</strong> {coutActuel.toLocaleString('fr-FR', { maximumFractionDigits: 0 })} €<br />
-            <strong>Coût de la tâche (après solution IA) :</strong> {coutApresAuto.toLocaleString('fr-FR', { maximumFractionDigits: 0 })} €<br />
-            <strong>Gain :</strong>{" "}
+            <strong>Coût annuel de la tâche (avant solution IA)  :</strong> {coutActuel.toLocaleString('fr-FR', { maximumFractionDigits: 0 })} €<br />
+            <strong>Coût annuel de la tâche (après solution IA) :</strong> {coutApresAuto.toLocaleString('fr-FR', { maximumFractionDigits: 0 })} €<br />
+            <strong>Gain annuel :</strong>{" "}
             <span className="text-green-600 font-bold">
               {economie.toLocaleString('fr-FR', { maximumFractionDigits: 0 })} €
             </span><br />
